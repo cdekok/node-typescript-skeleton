@@ -1,0 +1,28 @@
+{
+  "name": "{name}",
+  "version": "1.0.0",
+  "description": "{description}",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts",
+    "lint": "tslint ./src/**/*.ts || true",
+    "test": "mocha -r ts-node/register test/**/*Test.ts || true",
+    "test-coverage": "ts-node node_modules/istanbul/lib/cli.js cover -e .ts  -x \"*.d.ts\" -x \"*Test.ts\" _mocha -- --compilers ts:ts-node/register -R spec test/**/*Test.ts"
+  },
+  "author": "{author}",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.37",
+    "@types/node": "^7.0.0",
+    "chai": "^3.5.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "ts-node": "^2.0.0",
+    "tsc": "^1.20150623.0",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.4"
+  }
+}
